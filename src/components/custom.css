@@ -1,0 +1,13 @@
+.snapScroll {
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.snapScroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+.snapScrollChild {
+  scroll-snap-align: center;
+}

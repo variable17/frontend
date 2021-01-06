@@ -7,6 +7,8 @@ import {
   Redirect,
 } from "react-router-dom";
 
+import UserContextProvider from "./contexts/userContext";
+
 function App() {
   return (
     <>
@@ -15,12 +17,14 @@ function App() {
           <Route exact path="/">
             <Redirect to="/login" />
           </Route>
-          <Route exact path="/login">
-            <Login />
-          </Route>
-          <Route exact path="/home">
-            <Home />
-          </Route>
+          <UserContextProvider>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+            <Route exact path="/home">
+              <Home />
+            </Route>
+          </UserContextProvider>
         </Switch>
       </Router>
     </>
